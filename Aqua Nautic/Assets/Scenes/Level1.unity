@@ -11945,6 +11945,18 @@ PrefabInstance:
       value: Fish
       objectReference: {fileID: 0}
     - target: {fileID: 4907998090118801466, guid: af9c40528060049579238aa74c281463, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907998090118801466, guid: af9c40528060049579238aa74c281463, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907998090118801466, guid: af9c40528060049579238aa74c281463, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907998090118801466, guid: af9c40528060049579238aa74c281463, type: 3}
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}

@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cursor-icon-2048x2048-7mjsp9p1_0: -1163185001563217394
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
