@@ -1,0 +1,51 @@
+﻿<Properties StartupConfiguration="{90122333-54CD-6086-60F5-7A10CEF951AB}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Submarine/SubmarineController.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Submarine/SubmarineController.cs" Line="183" Column="1" />
+      <File FileName="Assets/Scripts/Submarine/SubmarineHealth.cs" Line="1" Column="8" />
+      <File FileName="Assets/Scripts/Submarine/SubmarineCollector.cs" />
+      <File FileName="Assets/Scripts/UI/UIManager.cs" />
+      <File FileName="Assets/Scripts/Bubble/Bubble.cs" />
+      <File FileName="Assets/Scripts/Bubble/BubbleSpawner.cs" />
+      <File FileName="Assets/Scripts/Mine/Mine.cs" />
+      <File FileName="Assets/Scripts/Mine/MineSpawner.cs" />
+      <File FileName="Assets/Scripts/Fish/Fish.cs" />
+      <File FileName="Assets/Scripts/Camera/CameraFollow.cs" />
+      <File FileName="Assets/Scripts/ObjectPool/ObjectPoolManager.cs" />
+      <File FileName="Assets/Sprites/Wallpaper/MenuParallax.cs" />
+      <File FileName="Assets/Scripts/Sound/AmbientSound.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Aqua Nautic" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Bubble" expanded="True" />
+                <Node name="Camera" expanded="True" />
+                <Node name="Fish" expanded="True" />
+                <Node name="Mine" expanded="True" />
+                <Node name="ObjectPool" expanded="True" />
+                <Node name="Sound" expanded="True" />
+                <Node name="Submarine" expanded="True">
+                  <Node name="SubmarineController.cs" selected="True" />
+                </Node>
+                <Node name="UI" expanded="True" />
+              </Node>
+              <Node name="Sprites" expanded="True">
+                <Node name="Wallpaper" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="78283755-9a5f-4043-ba2f-c963918a6675" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
