@@ -15,6 +15,11 @@ public class SubmarineController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private ParticleSystem bubbleParticles;
 
+
+    [Header("Input Settings")]
+    [SerializeField] private FloatingJoystick joystick; // Referință la joystick
+    [SerializeField] private bool useMobileControls = false;
+
     private SubmarineHealth health;
 
     void Start()
@@ -37,10 +42,8 @@ public class SubmarineController : MonoBehaviour
 
     void HandleMovement()
     {
-        // Check if health is 0 before allowing movement
         if (health != null && health.currentHealth <= 0)
         {
-            // Stop all movement and particles
             rb.linearVelocity = Vector2.zero;
             animator.enabled = false;
             if (bubbleParticles.isPlaying)
@@ -50,16 +53,22 @@ public class SubmarineController : MonoBehaviour
             return;
         }
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        Vector2 movement;
 
-        Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized;
+        if (useMobileControls && joystick != null)
+        {
+            // Folosește input-ul de la joystick
+            movement = new Vector2(joystick.Horizontal, joystick.Vertical);
+        }
+        else
+        {
+            // Folosește input-ul de la tastatură
+            movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        }
 
         if (movement.magnitude > 0.1f)
         {
             rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, movement * moveSpeed, 0.1f);
-
-            // Start animation
             animator.enabled = true;
 
             if (!bubbleParticles.isPlaying)
@@ -71,27 +80,26 @@ public class SubmarineController : MonoBehaviour
 
             var emission = bubbleParticles.emission;
             emission.rateOverTime = movement.magnitude * 10f;
+
+            // Verifică direcția pentru flip
+            if (movement.x > 0.1f && !isFacingRight)
+            {
+                Flip();
+            }
+            else if (movement.x < -0.1f && isFacingRight)
+            {
+                Flip();
+            }
         }
         else
         {
             rb.linearVelocity *= friction;
-
-            // Stop animation
             animator.enabled = false;
 
             if (bubbleParticles.isPlaying)
             {
                 bubbleParticles.Stop();
             }
-        }
-
-        if (horizontalInput > 0.1f && !isFacingRight)
-        {
-            Flip();
-        }
-        else if (horizontalInput < -0.1f && isFacingRight)
-        {
-            Flip();
         }
     }
 
