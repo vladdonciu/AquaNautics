@@ -31,7 +31,7 @@ public class SubmarineController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = submarineSprite.GetComponent<SpriteRenderer>();
         animator = submarineSprite.GetComponent<Animator>();
-        uiManager = FindObjectOfType<UIManager>();
+        uiManager = FindAnyObjectByType<UIManager>();
 
         rb.gravityScale = 0f;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
