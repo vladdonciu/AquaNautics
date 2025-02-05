@@ -3385,7 +3385,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: de9fd52a1c25d4b33b0771716aafb378, type: 3}
     - target: {fileID: 1708576943397005220, guid: f9b23aa9735a64e6b8f1d202726ad43a, type: 3}
       propertyPath: m_Color.b
-      value: 0.06781483
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1708576943397005220, guid: f9b23aa9735a64e6b8f1d202726ad43a, type: 3}
       propertyPath: m_Color.g
@@ -3393,7 +3393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1708576943397005220, guid: f9b23aa9735a64e6b8f1d202726ad43a, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1708576943397005220, guid: f9b23aa9735a64e6b8f1d202726ad43a, type: 3}
       propertyPath: m_SortingOrder
@@ -3749,6 +3749,8 @@ MonoBehaviour:
   winSound: {fileID: 8300000, guid: 700593f06b1db40cb8ebdd178a16bd15, type: 3}
   gameOverSound: {fileID: 8300000, guid: fb6e080187d114863914348eb92ada50, type: 3}
   warningSound: {fileID: 8300000, guid: b1db9f83f650c4d76a5c03935936efcd, type: 3}
+  joystick: {fileID: 0}
+  submarine: {fileID: 0}
 --- !u!4 &1097529244
 Transform:
   m_ObjectHideFlags: 0
@@ -12086,11 +12088,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4907998090118801466, guid: af9c40528060049579238aa74c281463, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4907998090118801466, guid: af9c40528060049579238aa74c281463, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4907998090118801466, guid: af9c40528060049579238aa74c281463, type: 3}
       propertyPath: m_Color.r
@@ -12124,11 +12126,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1708576943397005220, guid: f9b23aa9735a64e6b8f1d202726ad43a, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1708576943397005220, guid: f9b23aa9735a64e6b8f1d202726ad43a, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1708576943397005220, guid: f9b23aa9735a64e6b8f1d202726ad43a, type: 3}
       propertyPath: m_Color.r

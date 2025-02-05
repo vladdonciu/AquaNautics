@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class SubmarineController : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -21,6 +22,8 @@ public class SubmarineController : MonoBehaviour
     [SerializeField] private bool useMobileControls = false;
 
     private SubmarineHealth health;
+    private UIManager uiManager;
+    private bool isGameActive = true;
 
     void Start()
     {
@@ -28,6 +31,7 @@ public class SubmarineController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = submarineSprite.GetComponent<SpriteRenderer>();
         animator = submarineSprite.GetComponent<Animator>();
+        uiManager = FindObjectOfType<UIManager>();
 
         rb.gravityScale = 0f;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -42,6 +46,19 @@ public class SubmarineController : MonoBehaviour
 
     void HandleMovement()
     {
+
+        // Verifică dacă panoul de win sau game over este activ
+        if (!isGameActive || (uiManager != null && (uiManager.IsGameOver() || uiManager.IsGameWon())))
+        {
+            rb.linearVelocity = Vector2.zero;
+            animator.enabled = false;
+            if (bubbleParticles.isPlaying)
+            {
+                bubbleParticles.Stop();
+            }
+            return;
+        }
+
         if (health != null && health.currentHealth <= 0)
         {
             rb.linearVelocity = Vector2.zero;

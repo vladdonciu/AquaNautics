@@ -31,6 +31,16 @@ public class UIManager : MonoBehaviour
     private AudioSource audioSource;
     private AudioSource warningAudioSource;
 
+    [Header("Game Controls")]
+    [SerializeField] private FloatingJoystick joystick;
+    [SerializeField] private SubmarineController submarine;
+
+    private bool isGameOver = false;
+    private bool isGameWon = false;
+
+    public bool IsGameOver() => isGameOver;
+    public bool IsGameWon() => isGameWon;
+
     private Image healthFillImage;
     private Image timeFillImage;
 
@@ -90,8 +100,13 @@ public class UIManager : MonoBehaviour
 
     public void ResetUI()
     {
+
+        isGameOver = false;
+        isGameWon = false;
         currentFishCount = 0;
         UpdateFishCount(0, totalFishNeeded);
+        EnableControls();
+
 
         if (healthSlider != null)
         {
@@ -218,14 +233,16 @@ public class UIManager : MonoBehaviour
         }
     }
 
+
     public void ShowGameOverPanel()
     {
         if (gameOverPanel != null)
         {
+            isGameOver = true;
             gameOverPanel.SetActive(true);
+            DisableControls();
             PlaySound(gameOverSound);
 
-            // Stop warning sound and hide warning image when game over
             if (warningAudioSource.isPlaying)
             {
                 warningAudioSource.Stop();
@@ -241,10 +258,11 @@ public class UIManager : MonoBehaviour
     {
         if (winPanel != null)
         {
+            isGameWon = true;
             winPanel.SetActive(true);
+            DisableControls();
             PlaySound(winSound);
 
-            // Stop warning sound and hide warning image when win
             if (warningAudioSource.isPlaying)
             {
                 warningAudioSource.Stop();
@@ -255,6 +273,7 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+
 
     public void RestartLevel()
     {
@@ -284,6 +303,22 @@ public class UIManager : MonoBehaviour
         if (warningAudioSource != null)
         {
             warningAudioSource.volume = volume;
+        }
+    }
+
+    private void DisableControls()
+    {
+        if (joystick != null)
+        {
+            joystick.gameObject.SetActive(false);
+        }
+    }
+
+    private void EnableControls()
+    {
+        if (joystick != null)
+        {
+            joystick.gameObject.SetActive(true);
         }
     }
 
